@@ -1,8 +1,7 @@
 import os
-import sys
-import re
 import subprocess
-import time
+import sys
+
 import tqdm
 
 # 测试文件夹：D:\CZS4\1
@@ -87,7 +86,8 @@ while doing:
         if is_file and file_name not in ignoreList:
             ignoreList.append(file_name)
         else:
-            print("输入的内容只能是文件，或者你输入了重复的内容。") # 仅列出警告，不必中止。因为此时并未添加任何错误信息。
+            print("输入的内容只能是文件，或者你输入了重复的内容。")  # 仅列出警告，不必中止。因为此时并未添加任何错误信息。
+
 
 # print(mp4file,"\n",f"mp4file的长度为:{len(mp4file)}")  # 测试代码
 # print(ignoreList)  # 测试代码
@@ -142,6 +142,5 @@ for file in tqdm.tqdm(readyToConvertList):
     subArgs[5] = encDir + os.sep + file_suf
     # print(subArgs)
     subprocess.Popen(subArgs, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
 
 # endregion
